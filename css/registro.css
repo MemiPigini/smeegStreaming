@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    --black: #000000;
+    --grisJet: #333333;
+    --russianViolet: #31013F;
+    --amarilloOscuro: #ECD500;
+    --amarilloClaro: #FFE70D;
+    --white: #FFFFFF;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: #000000;
+    min-width: 100%;
+}
+
+.logo img{
+    width: 180px;
+}
+
+.logo{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbar .logo p{
+    margin-left: 20px;
+    margin-top: 8px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #333333;
+}
+
+header .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid rgb(255, 255, 255, 0.5);
+}
+
+header .navbar::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,231,13,0.7), transparent);
+    transition: 0.9s;
+}
+
+header .navbar:hover::before{
+    left: 100%;
+}
+
+.banner_planes{
+    margin-top: 30px;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.banner_planes h2, h3, h4{
+    margin-top: 20px;
+}
+
+.card_planes{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card_planes h2,h3{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card_planes h3{
+    font-size: 50px;
+    color: #FFE70D;
+}
+
+.card_planes h3 small{
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.card_planes ul{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card{
+    width: 250px;
+    height: 300px;
+    margin: 10px;
+    padding: 50px;
+    color: #FFFFFF;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
+
+.card hr{
+    border: none;
+    height: 0.1px;
+    background: #41414138;
+}
+
+.basico{
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    background-color: rgba(49, 1, 63, 0.356);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    transition: all 300ms;
+}
+
+.estandar{
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    background-color: rgb(255, 255, 255, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    transition: all 300ms;
+}
+
+.premium{
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 231, 19, 0.546);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    transition: all 300ms;
+}
+
+.basico .footer_card{
+    margin-top: 60px;
+}
+
+.estandar .footer_card{
+    margin-top: 40px;
+}
+
+.premium .footer_card{
+    margin-top: 20px;
+}
+
+.boton_modal{
+    width: 100%;
+    height: 35px;
+    background: #ECD500;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.boton_modal label{
+    cursor: pointer;
+    color: #000000;
+    transition: all 300ms ease;
+}
+
+.boton_modal:hover{
+    background-color: #FFE70D;
+}
+
+#botonmodal{
+    display: none;
+}
+
+.container_modal{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0; left: 0;
+    background-color: #333333e8;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#botonmodal:checked~ .container_modal{
+    display: flex;
+}
+
+.contenido_modal{
+    width: 100%;
+    max-width: 450px;
+    height: 700px;
+    padding: 30px;
+    background-color: #000000;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+}
+
+.contenido_modal h2{
+    margin-bottom: 40px;
+    color: #FFFFFF;
+}
+
+.container_modal .boton_cerrar{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container_modal .boton_cerrar label{
+    padding: 7px 10px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.contenido_modal .boton_cerrar label:hover{
+    background-color: #FFE70D;
+}
+
+.cerrar_modal{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+}
+
+.contenido_modal form .input-box{
+    position: relative;
+    border-bottom: 2px solid white;
+    margin-top: 30px;
+}
+
+.contenido_modal form .caja label a{
+    color: #ECD500;
+}
+
+.contenido_modal form .input-box label{
+    position: absolute;
+    top: 50%;
+    font-size: 15px;
+    color: white;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.contenido_modal form .input-box input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #ECD500;
+    padding: 0 35px 0 5px;
+}
+
+.contenido_modal form .date{
+    margin-bottom: 20px;
+}
+
+.contenido_modal form .caja{
+    font-size: 14px;
+}
+
+.contenido_modal form button{
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    background: #ECD500;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.contenido_modal form button a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.contenido_modal form button:hover{
+    background-color: #FFE70D;
+}
+
+.piepagina{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+    
+.piepagina .grupo2{
+    background-color: #31013F;
+    padding: 5px 5px;
+    text-align: center;
+    color: #FFE70D;
+}
+
+.piepagina .grupo2 small{
+    font-size: 12px;
+}
+
+@media only screen and (max-width:768px){
+    header .navbar .logo p{
+        display: none;
+    }
+
+    .navbar .logo img{
+        margin-left: 200px;
+    }
+
+    header .navbar::before{
+        display: none;
+    }
+    
+    header .navbar:hover::before{
+        display: none;
+    }
+
+    .contenedor{
+        margin-top: 50px;
+    }
+
+    .login_box{
+        width: 60%;
+        height: 450px;
+        margin-bottom: 20px;
+    }
+
+    .piepagina{
+        position: relative;
+        bottom: 0;
+    }
+}
+
+@media only screen and (max-width:390px){
+
+    .navbar .logo p{
+        display: none;
+    }
+
+    .navbar .logo img{
+        width:100px;
+        margin-left: 40px;
+    }
+
+    header .navbar::before{
+        display: none;
+    }
+    
+    header .navbar:hover::before{
+        display: none;
+    }
+
+    .card_planes{
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .contenido_modal{
+        width: 80%;
+    }   
+
+    .piepagina{
+        position: relative;
+        bottom: 0;
+    }
+}

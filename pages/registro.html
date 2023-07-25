@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alumnos de Rolling Code School">
+    <meta name="description" content="Plataforma de streaming con contenido ilimitado">
+    <meta name="keywords" content="streaming, series, películas, tv shows, lives, gaming, podcast, radio, contenido ilimitado">
+    <link rel="icon" href="/assets/Logo Smeeg.png">
+    <script src="https://kit.fontawesome.com/990e1bab89.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/registro.css">
+    <title>Smeeg Registro</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="/index.html"><img src="/assets/Logo Smeeg.png" alt="Logo Smeeg Streaming"></a>
+                <p>STREAMING</p>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="registro_contenedor">
+            <section class="banner_planes">
+                <h2>Elegí el plan ideal para vos!</h2>
+                <h3>Disfrutá de contenido ilimitado donde quieras, cuando quieras y sin anuncios.</h3>
+                <h4>Registrate y cancelá cuando quieras.</h4>
+            </section>
+            <section class="card_planes">
+                <div class="card basico">
+                    <h2>BÁSICO</h2>
+                    <h3>$1000<small>/mes</small></h3>
+                    <hr>
+                    <ul>
+                        <li>Calidad de video: <i>Buena</i></li>
+                        <li>Resolución: 480p</li>
+                        <li>Dispositivos: 2</li>
+                    </ul>
+                    <hr>
+                    <div class="footer_card">
+                        <div class="boton_modal">
+                            <label for="botonmodal">SELECCIONAR</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card estandar">
+                    <h2>ESTÁNDAR</h2>
+                    <h3>$2000<small>/mes</small></h3>
+                    <hr>
+                    <ul>
+                        <li>Calidad de video: <i>Muy buena</i></li>
+                        <li>Resolución: 1080p</li>
+                        <li>Dispositivos: 3</li>
+                        <li>Descargas mensuales: 5</li>
+                    </ul>
+                    <hr>
+                    <div class="footer_card">
+                        <div class="boton_modal">
+                            <label for="botonmodal">SELECCIONAR</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card premium">
+                    <h2>PREMIUM</h2>
+                    <h3>$3000<small>/mes</small></h3>
+                    <hr>
+                    <ul>
+                        <li>Calidad de video: <i>Excelente</i></li>
+                        <li>Resolución: 4k+HDR</li>
+                        <li>Dispositivos: 8</li>
+                        <li>Descargas mensuales: infinitas</li>
+                        <li>Mirá los estrenos antes!</li>
+                    </ul>
+                    <hr>
+                    <div class="footer_card">
+                        <div class="boton_modal">
+                            <label for="botonmodal">SELECCIONAR</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <input type="checkbox" id="botonmodal">
+        <div class="container_modal">
+            <div class="contenido_modal">
+                <h2>Formulario de registro</h2>
+                <form>
+                    <div class="input-box">
+                        <input type="text" id="name" required maxlength="30" minlength="2">
+                        <label for="nombre" class="form-label">Nombre y apellido</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" required>
+                        <label for="email">Correo electrónico</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" required maxlength="15" minlength="8">
+                        <label for="password">Contraseña</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" required minlength="8" maxlength="15">
+                        <label for="password">Repetir Contraseña</label>
+                    </div>
+                    <div class="input-box date">
+                        <input type="date">
+                        <label for="date">Fecha de nacimiento</label>
+                    </div>
+                    <div class="caja">
+                        <input type="checkbox" required>
+                        <label class="caja" for="checkbox"><a href="/pages/error404.html">Acepto Términos y Condiciones</a></label>
+                    </div>
+                    <button type="submit"><a href="#">Continuar</a></button>
+                    <button type="reset">Borrar todo</button>
+                </form>
+                <div class="boton_cerrar"><label for="botonmodal">Cerrar</label></div>
+            </div>
+            <label for="boton_modal" class="cerrar_modal"></label>
+        </div>
+    </main>
+    <footer class="piepagina">
+        <div class="grupo2">
+            <small>&copy; 2023 <b>smeeg</b> - Todos los Derechos Reservados</small>
+        </div>
+    </footer>  
+</body>
+</html>

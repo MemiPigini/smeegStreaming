@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    --black: #000000;
+    --grisJet: #333333;
+    --russianViolet: #31013F;
+    --amarilloOscuro: #ECD500;
+    --amarilloClaro: #FFE70D;
+    --white: #FFFFFF;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: #000000;
+}
+
+.logo img{
+    width: 180px;
+}
+
+.logo{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbar .logo p{
+    margin-left: 20px;
+    margin-top: 8px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #333333;
+}
+
+header .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid rgb(255, 255, 255, 0.5);
+}
+
+.container{
+    width: 100vh;
+}
+
+.piepagina{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+    
+.piepagina .grupo2{
+    background-color: #31013F;
+    padding: 5px 5px;
+    text-align: center;
+    color: #FFE70D;
+}
+
+.piepagina .grupo2 small{
+    font-size: 12px;
+}
+
+@media only screen and (max-width:768px){
+    .navbar .logo p{
+        display: none;
+    }
+
+    .container{
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+@media only screen and (max-width:390px){
+    .navbar .logo p{
+        display: none;
+    }
+
+    .container{
+        width: 100%;
+        height: auto;
+    }
+
+}

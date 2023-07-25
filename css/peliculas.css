@@ -1,0 +1,917 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    --black: #000000;
+    --grisJet: #333333;
+    --russianViolet: #31013F;
+    --amarilloOscuro: #ECD500;
+    --amarilloClaro: #FFE70D;
+    --white: #FFFFFF;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background: #000000;
+    width: 100%;
+}
+
+header img{
+    width: 180px;
+}
+
+.logo{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li, a{
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid rgb(255, 255, 255, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 200;
+}
+
+header::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,231,13,0.7), transparent);
+    transition: 0.9s;
+}
+
+header:hover::before{
+    left: 100%;
+}
+
+.nav_links{
+    list-style: none;
+}
+
+.nav_links .lupita{
+    display: none;
+}
+
+.nav_links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav_links li a{
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover{
+    color: #FFE70D;
+    text-shadow:  1px 1px 2px white, 0 0 1em white, 0 0 0.2em white;
+    cursor: pointer;
+}
+
+.nav_links .lupita{
+    display: none;
+}
+
+.buscador{
+    width: 250px;
+    margin-left: 40px;
+}
+
+.contenedornav{
+    width: 300px;
+    border-radius: 70px;
+    border: 1px solid rgb(224, 224, 224);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.contenedornav i{
+    color: #31013F;
+}
+
+input{
+    width: 200px;
+    height: 30px;
+    border: none;
+    outline: none;
+}
+
+.contenedor:hover{
+    box-shadow: 0 1px 6px grey;
+}
+
+.contenedor span{
+    color: rgb(155, 154, 154);
+    background-color: white;
+}
+
+#microfono{
+    width: 25px;
+    color: #31013F;
+}
+
+main .categorias_titulo{
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 25px;
+    padding-left: 100px;
+}
+
+main .categorias_peliculas{  
+    margin: 12px 0 30px 0;
+    background: #31013F;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 100px 0 100px;
+}
+
+main .categorias_peliculas a:hover{
+    color: #FFE70D;
+}
+
+.portada{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.portada img{
+    max-width: 98%;
+    border: 1px solid #333333;
+    border-radius: 14px;
+    margin-left: 14px;
+}
+
+.canales{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 35px;
+}
+
+.channel{
+    width: 230px;
+    height: 80px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    background-color: rgb(255, 255, 255, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    transition: all 300ms;
+}
+
+.channel a{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.channel a::first-letter{
+    color: #ECD500;
+    font-size: 30px;
+}
+
+.channel:hover{
+    transform: translateY(-10px);
+    box-shadow: 7px 7px 8px #333333;
+    border-color: #ECD500;
+    cursor: pointer;
+}
+
+.channel:hover a{
+    transform: scale(1.1);
+}
+
+.recomendaciones1{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 40px;
+}
+
+.recomendaciones1 div h3{
+    position: absolute;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    padding-left: 100px;
+}
+
+.movies{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    width: 340px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    padding-left: 40px;
+}
+
+.movies img{
+    width: 80%;
+    height: auto;
+    border-radius: 2px;
+}
+
+.movies img:hover{
+    box-shadow: -1px -1px 6px 0 #ECD500, 4px 4px 16px 2px #333333;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.carrusel_recomendaciones{
+    display: none;
+}
+
+.pelicula_mes .container{
+    margin-top: 20px;
+}
+
+.pelicula_mes .descripcion_pelicula{
+    width: 50px;
+    color: #FFFFFF;
+}
+
+.pelicula_mes .descripcion_pelicula h2{
+    font-size: 30px;
+    color: #ECD500;
+    margin-top: 120px;
+}
+
+.pelicula_mes .descripcion_pelicula h4{
+    font-size: 15px;
+    color: #333333;
+}
+
+.pelicula_mes .descripcion_pelicula h3{
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+.pelicula_mes .container .trailer{
+    width: 85vw; 
+    margin-left: -80px; 
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    background-color: rgb(255, 255, 255, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    transition: all 300ms;
+}
+
+.mes_footer{
+    color: #FFFFFF;
+    font-weight: 400;
+    text-align: center;
+}
+
+.boton_verpelicula{
+    width: 150px;
+    height: 35px;
+    background: #ECD500;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    margin-left: 45vw;
+    margin-top: 20px;
+}
+
+.boton_verpelicula a{
+    font-size: 18px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: 600;
+    text-align: center;
+    padding: 2px 5px 2px 37px; 
+}
+
+.boton_verpelicula:hover{
+    background-color: #FFE70D;
+}
+
+
+.piepagina{
+    width: 100%;
+    background-color: #333333;
+    bottom: 0;
+}
+
+.piepagina .grupo1{
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 60px;
+}
+
+.piepagina .grupo1 .box{
+    margin-top: 15px;
+}
+
+.piepagina .grupo1 .box figure{
+    width: 30px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.piepagina .grupo1 .box figure img{
+    width: 150px;
+}
+
+.piepagina .grupo1 .box h2{
+    color: white;
+    margin-bottom: 20px;
+    font-size: 11px;
+}
+
+.piepagina .grupo1 .box a{
+    color:   white;
+    margin-bottom: 10px;
+    font-size: 11px;
+    text-decoration: underline;
+}
+
+
+.piepagina .grupo1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: white;
+    margin-right: 10px;
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+.piepagina .grupo1 .red-social a:hover{
+    color: aqua;
+}
+
+.botones{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+}
+
+.piepagina .grupo2{
+    background-color: #31013F;
+    padding: 5px 5px;
+    text-align: center;
+    color: #FFE70D;
+}
+
+.piepagina .grupo2 small{
+    font-size: 12px;
+}
+
+.fb{
+    background: blue;
+    padding: 8px;
+    border-radius: 50px;
+    color: white;
+    font-size: 18px;
+}
+
+.tw{
+    background: rgb(0, 140, 255);
+    padding: 8px;
+    border-radius: 50px;
+    color: white;
+    font-size: 18px;
+}
+
+.in{
+    background: rgb(250, 0, 179);
+    padding: 8px;
+    border-radius: 50px;
+    color: white;
+    font-size: 18px;
+}
+
+.li{
+    background: rgb(0, 102, 255);
+    padding: 8px;
+    border-radius: 50px;
+    color: white;
+    font-size: 18px;
+}
+
+.yt{
+    background: red;
+    padding: 8px;
+    border-radius: 50px;
+    color: white;
+    font-size: 18px;
+}
+
+
+#botonmodal_1{
+    display: none;
+}
+
+#botonmodal_2{
+    display: none;
+}
+
+#botonmodal_3{
+    display: none;
+}
+
+#botonmodal_4{
+    display: none;
+}
+
+#botonmodal_5{
+    display: none;
+}
+
+.container_modal_1{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 600px; left: 0;
+    background-color: #333333e8;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.container_modal_2{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 600px; left: 0;
+    background-color: #333333e8;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.container_modal_3{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 600px; left: 0;
+    background-color: #333333e8;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.container_modal_4{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 600px; left: 0;
+    background-color: #333333e8;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.container_modal_5{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 600px; left: 0;
+    background-color: #333333e8;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#botonmodal_1:checked~ .container_modal_1{
+    display: flex;
+}
+
+#botonmodal_2:checked~ .container_modal_2{
+    display: flex;
+}
+
+#botonmodal_3:checked~ .container_modal_3{
+    display: flex;
+}
+#botonmodal_4:checked~ .container_modal_4{
+    display: flex;
+}
+#botonmodal_5:checked~ .container_modal_5{
+    display: flex;
+}
+
+.container_modal_1 .boton_cerrar_1{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container_modal_2 .boton_cerrar_2{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container_modal_3 .boton_cerrar_3{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container_modal_4 .boton_cerrar_4{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container_modal_5 .boton_cerrar_5{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container_modal_1 .boton_cerrar_1 label{
+    padding: 7px 10px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.container_modal_2 .boton_cerrar_2 label{
+    padding: 7px 10px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.container_modal_3 .boton_cerrar_3 label{
+    padding: 7px 10px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.container_modal_4 .boton_cerrar_4 label{
+    padding: 7px 10px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.container_modal_5 .boton_cerrar_5 label{
+    padding: 7px 10px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+.cerrar_modal_1{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+}
+
+.cerrar_modal_2{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+}
+
+.cerrar_modal_3{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+}
+
+.cerrar_modal_4{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+}
+
+.cerrar_modal_5{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+}
+
+.boton_verpelicula_movies{
+    width: 110px;
+    height: 35px;
+    background: #ECD500;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin-left: 330px;
+}
+
+.boton_verpelicula_movies a{
+    font-size: 18px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.boton_verpelicula_movies:hover{
+    background-color: #FFE70D;
+}
+
+@media only screen and (max-width:768px){
+    body{
+        width: 100vw;
+    }
+
+    header{
+        height: 80px;
+        padding: 0 20px 0 20px;
+    }
+
+    .buscador{
+        display: none;
+    }
+
+    .nav_links .lupita{
+        display: inline-block;
+    }
+
+    header .navbar::before{
+        display: none;
+    }
+    
+    header .navbar:hover::before{
+        display: none;
+    }
+    
+    main .categorias_peliculas{  
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .canales{
+        display: block;
+    }
+
+    .channel{
+        margin-left: 40px;
+        margin-bottom: 20px;
+        width: 90%;
+        height: 60px;
+    }
+
+    .channel a{
+        margin-top: 10px;
+    }
+
+    .recomendaciones1{
+        display: none;
+    }
+
+    .titulo_recomendacion h3{
+        position: absolute;
+        font-size: 20px;
+        font-weight: 700;
+        color: white;
+        padding-left: 100px;
+    }
+
+    .carrusel_recomendaciones{
+        display: block;
+        width: 70vw;
+        margin-top: 60px;
+        margin-left: 115px;
+    }
+
+    .pelicula_mes .container .trailer{
+        width: 90vw; 
+        margin-left: 5px; 
+        height: 500px;
+    }
+
+    .pelicula_recomendada video{
+        width: 80vw;
+        margin-left: 25px;
+        margin-bottom: 2px;
+    }
+    
+    .pelicula_mes .descripcion_pelicula{
+        color: #FFFFFF;
+    }
+
+    .pelicula_mes .descripcion_pelicula h2{
+        font-size: 20px;
+        color: #ECD500;
+        margin-top: 1px;
+    }
+
+    .pelicula_mes .descripcion_pelicula h4{
+        font-size: 20px;
+        color: #333333;
+    }
+    
+    .pelicula_mes .descripcion_pelicula h3{
+        font-size: 18px;
+        margin-top: 5px;
+        margin-left: 2px;
+    }
+
+    .mes_footer{
+        padding: 10px;
+    }
+
+    .piepagina{
+        position: relative;
+    }
+
+    .piepagina .grupo1{
+        grid-template-columns: none;
+        grid-gap: 1px;
+    }
+
+    .piepagina .grupo1 .box{
+        margin-left: 20px;
+    }
+
+    .piepagina .grupo1 .box figure{
+        width: 50vw;
+    }
+
+    .piepagina .grupo1 .box figure img{
+        width: 130px;
+        margin: 10px 0 2px 360px;
+    }
+}
+
+@media only screen and (max-width:390px){
+
+    body{
+        width: 100vw;
+    }
+
+    header{
+        height: 90px;
+        padding: 20px 5px 0 20px;
+    }
+
+    header .logo img{
+        width: 100px;
+        margin-left: 20px;
+    }
+
+    .banneralto{
+        width: 100vw;
+    }
+    
+    li, a{
+        font-weight: 500;
+        font-size: 20px;
+        color: white;
+        text-decoration: none;
+        margin-top: 10px;
+    }
+
+    main .categorias_titulo{
+        padding-left: 140px;
+    }
+
+    main .categorias_peliculas{  
+        display: block;
+        text-align: center;
+    }
+
+
+    .channel{
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+
+    .channel a{
+        margin-top: 7px;
+    }
+    
+    .titulo_recomendacion h3{
+        padding-left: 80px;
+    }
+
+    .carrusel_recomendaciones{
+        margin-left: 55px;
+    }
+
+    .pelicula_mes .container .trailer{
+        width: 90vw; 
+        margin-left: 5px; 
+        height: 500px;
+    }
+
+    .pelicula_recomendada video{
+        width: 80vw;
+        margin-left: 5px;
+        margin-bottom: 2px;
+    }
+    
+    .pelicula_mes .descripcion_pelicula h4{
+        font-size: 20px;
+        color: #333333;
+    }
+
+    .boton_verpelicula{
+        margin-left: 30vw;
+    }
+
+    .boton_verpelicula a{
+        margin-top: 2px;
+    }
+
+    .piepagina{
+        position: relative;
+    }
+
+    .piepagina .grupo1{
+        grid-template-columns: none;
+        grid-gap: 1px;
+    }
+
+    .piepagina .grupo1 .box figure{
+        width: 50vw;
+    }
+
+    .piepagina .grupo1 .box figure img{
+        width: 130px;
+        margin: 10px 0 2px 150px;
+    }
+}

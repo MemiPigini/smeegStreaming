@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    --black: #000000;
+    --grisJet: #333333;
+    --russianViolet: #31013F;
+    --amarilloOscuro: #ECD500;
+    --amarilloClaro: #FFE70D;
+    --white: #FFFFFF;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: #000000;
+    background-size: cover;
+    min-width: 100%;
+}
+
+
+.container_bubbles{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -30;
+}
+
+.bubbles{
+    position: relative;
+    display: flex;
+}
+
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #31013F;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #1b0023, 0 0 50px #31013F, 0 0 100px #31013F;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+.bubbles span:nth-child(even){
+    box-shadow: 0 0 0 10px #d9d084, 0 0 50px #ECD500, 0 0 100px #ECD500;
+    background: #ECD500;
+}
+
+@keyframes animate{
+    0%
+    {
+        transform: translateY(100vh) scale(0);
+    }
+    100%
+    {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+.logo img{
+    width: 180px;
+}
+
+.logo{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbar .logo p{
+    margin-left: 20px;
+    margin-top: 8px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #333333;
+}
+
+header .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid rgb(255, 255, 255, 0.5);
+}
+
+header .navbar::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,231,13,0.7), transparent);
+    transition: 0.9s;
+}
+
+header .navbar:hover::before{
+    left: 100%;
+}
+
+.navbar .boton_login{
+    width: 120px;
+    height: 35px;
+    background: #ECD500;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar .boton_login a{
+    font-size: 18px;
+    text-decoration: none;
+    padding-top: 5px;
+    color: #333333;
+    font-weight: 600;
+}
+
+main .presentacion{
+    margin-top: 50px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.presentacion h2{
+    letter-spacing: 10px;
+    margin-bottom: 20px;
+}
+
+.presentacion h3{
+    letter-spacing: 1px;
+    font-size: 15px;
+    margin-bottom: 50px;
+}
+
+main .container_cards{
+    width: 100vw;
+    margin: auto;
+    margin-top: 45px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+main .container_cards .card{
+    width: 250px;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    background-color: rgb(255, 255, 255, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    transition: all 300ms;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
+
+.card:hover .cover_card img{
+    transform: scale(1.1);
+}
+
+.card .cover_card{
+    width: 100%;
+    height: 180px;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.card .cover_card img{
+    width: 100%;
+    height: 180px;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.container_cards .card h2{
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 20px;
+    color: #FFFFFF;
+}
+
+.container_cards .card h2::first-letter{
+    color: #ECD500;
+    font-size: 30px;
+}
+
+.container_cards .card p{
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 300;
+    color: white;
+}
+
+.card hr{
+    margin-top: 30px;
+    border: none;
+    height: 0.1px;
+    background: #333333;
+}
+
+.card .footer_card{
+    margin-top: 10px;
+    display: flex;
+    color: #FFFFFF;
+    justify-content: space-between;
+}
+
+.footer_card a{
+    font-size: 20px;
+    color: #FFE70D;
+    font-weight: 500;
+}
+
+.piepagina{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+    
+.piepagina .grupo2{
+    background-color: #31013F;
+    padding: 5px 5px;
+    text-align: center;
+    color: #FFE70D;
+}
+
+.piepagina .grupo2 small{
+    font-size: 12px;
+}
+
+
+@media only screen and (max-width:768px){
+    .navbar .logo p{
+        display: none;
+    }
+
+    header .navbar::before{
+        display: none;
+    }
+    
+    header .navbar:hover::before{
+        display: none;
+    }
+
+    .contenedor{
+        margin-top: 50px;
+    }
+
+    .login_box{
+        width: 60%;
+        height: 450px;
+        margin-bottom: 20px;
+    }
+
+    main .presentacion{
+        margin-top: 30px;
+    }
+
+    .piepagina{
+        position: relative;
+    }
+
+    .container_bubbles{
+        display: none;
+    }
+}
+
+@media only screen and (max-width:390px){
+    .navbar .logo p{
+        display: none;
+    }
+
+    .navbar .logo img{
+        width:100px;
+        margin-left: -10px;
+    }
+
+    .navbar .boton_login a{
+        width: 90px;
+        padding-left: 17px;
+    }
+
+    header .navbar::before{
+        display: none;
+    }
+    
+    header .navbar:hover::before{
+        display: none;
+    }
+
+    .contenedor{
+        margin-top: 10px;
+    }
+
+    .piepagina{
+        position: relative;
+    }
+
+}

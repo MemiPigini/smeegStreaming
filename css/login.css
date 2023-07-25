@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    --black: #000000;
+    --grisJet: #333333;
+    --russianViolet: #31013F;
+    --amarilloOscuro: #ECD500;
+    --amarilloClaro: #FFE70D;
+    --white: #FFFFFF;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: #000000;
+    min-width: 100%;
+}
+
+
+.container_bubbles{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -30;
+}
+
+.bubbles{
+    position: relative;
+    display: flex;
+}
+
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #31013F;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #1b0023, 0 0 50px #31013F, 0 0 100px #31013F;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+.bubbles span:nth-child(even){
+    box-shadow: 0 0 0 10px #d9d084, 0 0 50px #ECD500, 0 0 100px #ECD500;
+    background: #ECD500;
+}
+
+@keyframes animate{
+    0%
+    {
+        transform: translateY(100vh) scale(0);
+    }
+    100%
+    {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+.logo img{
+    width: 180px;
+}
+
+.logo{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbar .logo p{
+    margin-left: 20px;
+    margin-top: 8px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #333333;
+}
+
+header .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid rgb(255, 255, 255, 0.5);
+}
+
+header .navbar::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,231,13,0.7), transparent);
+    transition: 0.9s;
+}
+
+header .navbar:hover::before{
+    left: 100%;
+}
+
+.navbar .boton_login{
+    width: 120px;
+    height: 35px;
+    background: #ECD500;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar .boton_login a{
+    font-size: 18px;
+    text-decoration: none;
+    padding-top: 5px;
+    color: #333333;
+    font-weight: 600;
+}
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.login_box{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    color: #FFFFFF;
+    background-color: rgb(255, 255, 255, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.input_box{
+    position: relative;
+    width: 310px;
+    margin: 30px 0;
+    border-bottom: 2px solid white;
+}
+
+.input_box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 15px;
+    color: white;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input_box input:focus~label,
+.input_box input:valid~label {
+    top: -5px;
+}
+
+.input_box input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: white;
+    padding: 0 35px 0 5px;
+}
+
+.input_box .icon{
+    position: absolute;
+    right: 8px;
+    color: white;
+    font-size: 15px;
+    line-height: 57px;
+}
+
+.remember-forgot {
+    margin: -15px 0 15px;
+    font-size: 12px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot a{
+    color: white;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+button{
+    width: 100%;
+    height: 40px;
+    background: #ECD500;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #333333;
+    font-weight: 700;
+}
+
+button a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.register_link{
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register_link p a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register_link p a:hover{
+    text-decoration: underline;
+}
+
+.piepagina{
+    width: 100%;
+    background-color: #333333;
+    position: absolute;
+    bottom: 0;
+}
+
+.piepagina .grupo1{
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 60px;
+}
+
+.piepagina .grupo1 .box{
+    margin-top: 15px;
+}
+
+.piepagina .grupo1 .box figure{
+    width: 30px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.piepagina .grupo1 .box figure img{
+    width: 150px;
+}
+
+.piepagina .grupo1 .box h2{
+    color: white;
+    margin-bottom: 20px;
+    font-size: 11px;
+}
+
+.piepagina .grupo1 .box a{
+    color:   white;
+    margin-bottom: 10px;
+}
+
+.piepagina .grupo1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: white;
+    margin-right: 10px;
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+.piepagina .grupo1 .red-social a:hover{
+    color: aqua;
+}
+
+.botones{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+}
+
+.piepagina .grupo2{
+    background-color: #31013F;
+    padding: 5px 5px;
+    text-align: center;
+    color: #FFE70D;
+}
+
+.piepagina .grupo2 small{
+    font-size: 12px;
+}
+
+.fb{
+    background: blue;
+    padding: 8px;
+    border-radius: 50px;
+    color: white;
+}
+
+.tw{
+    background: rgb(0, 140, 255);
+    padding: 8px;
+    border-radius: 50px;
+    color: white;
+}
+
+.in{
+    background: rgb(250, 0, 179);
+    padding: 8px;
+    border-radius: 50px;
+    color: white;
+}
+
+.li{
+    background: rgb(0, 102, 255);
+    padding: 8px;
+    border-radius: 50px;
+    color: white;
+}
+
+.yt{
+    background: red;
+    padding: 8px;
+    border-radius: 50px;
+    color: white;
+}
+
+
+@media only screen and (max-width:768px){
+    .navbar .logo p{
+        display: none;
+    }
+
+    header .navbar::before{
+        display: none;
+    }
+    
+    header .navbar:hover::before{
+        display: none;
+    }
+
+    .contenedor{
+        margin-top: 50px;
+    }
+
+    .login_box{
+        width: 60%;
+        height: 450px;
+        margin-bottom: 20px;
+    }
+
+    .piepagina .grupo1{
+        grid-template-columns: none;
+        grid-gap: 1px;
+    }
+
+    .piepagina .grupo1 .box{
+        margin-left: 20px;
+    }
+
+    .piepagina .grupo1 .box figure{
+        width: 50vw;
+    }
+
+    .piepagina .grupo1 .box figure img{
+        width: 130px;
+        margin: 10px 0 2px 360px;
+    }
+
+    .container_bubbles{
+        display: none;
+    }
+}
+
+@media only screen and (max-width:390px){
+    .navbar .logo p{
+        display: none;
+    }
+
+    .navbar .logo img{
+        width:100px;
+        margin-left: -10px;
+    }
+
+    .navbar .boton_login a{
+        width: 90px;
+        padding-left: 17px;
+    }
+
+    header .navbar::before{
+        display: none;
+    }
+    
+    header .navbar:hover::before{
+        display: none;
+    }
+
+    .login_box{
+        width: 90%;
+        height: 500px;
+    }
+
+    .piepagina{
+        position: relative;
+    }
+
+    .piepagina .grupo1{
+        grid-template-columns: none;
+        grid-gap: 1px;
+    }
+
+    .piepagina .grupo1 .box figure{
+        width: 50vw;
+    }
+
+    .piepagina .grupo1 .box figure img{
+        width: 130px;
+        margin: 10px 0 2px 150px;
+    }
+
+}
